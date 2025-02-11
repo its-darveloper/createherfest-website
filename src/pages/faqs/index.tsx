@@ -117,7 +117,9 @@ export default function FAQSection() {
   }
 
   return (
+    
     <section className="pt-40 pb-24 relative faq-section">
+      
       {/* Decorative background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none bg-[#150e60]">
   <div className="absolute top-1/4 -right-40 w-[500px] h-[500px] bg-[#473dc6]/40 rounded-full blur-3xl" />

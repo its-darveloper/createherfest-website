@@ -14,13 +14,16 @@ interface SeoProps {
 export const Seo = ({ 
   title,
   description,
-  url = 'https://createherfest-website-staging.web.app/code-of-conduct',
-  image = 'https://createherfest-website-staging.web.app/og-image.jpg', // Make sure this exists
+  url,
+  image,
   type = 'article',
   author = 'CreateHER Fest',
   publishedTime = new Date().toISOString()
 }: SeoProps) => {
   const fullTitle = `${title} | CreateHER Fest`;
+  const baseUrl = 'https://createherfest-website-staging.web.app';
+  const finalUrl = url || `${baseUrl}/code-of-conduct`;
+  const finalImage = image || 'https://cdn.prod.website-files.com/61feaeaa52128ab2ccab4143/65d215122fb696a06ed21612_baddiecommunity-p-1600.jpg';
   
   return (
     <Helmet>
@@ -29,29 +32,32 @@ export const Seo = ({
       <meta name="title" content={fullTitle} />
       <meta name="description" content={description} />
       
-      {/* OpenGraph / Facebook / LinkedIn */}
+      {/* Essential OpenGraph */}
       <meta property="og:type" content={type} />
+      <meta property="og:url" content={finalUrl} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={url} />
-      <meta property="og:image" content={image} />
-      <meta property="og:site_name" content="CreateHER Fest" />
+      <meta property="og:image" content={finalImage} />
       
-      {/* Article Specific */}
+      {/* Additional OpenGraph */}
+      <meta property="og:site_name" content="CreateHER Fest" />
+      <meta property="og:locale" content="en_US" />
       <meta property="article:published_time" content={publishedTime} />
       <meta property="article:author" content={author} />
       
-      {/* Twitter */}
+      {/* Image Specifics */}
+      <meta property="og:image:width" content="1600" />
+      <meta property="og:image:height" content="900" />
+      <meta property="og:image:type" content="image/jpeg" />
+      
+      {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
-
-      {/* Additional Important Meta Tags */}
-      <link rel="canonical" href={url} />
-      <meta name="robots" content="index, follow" />
-      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta name="language" content="English" />
+      <meta name="twitter:image" content={finalImage} />
+      
+      {/* Canonical */}
+      <link rel="canonical" href={finalUrl} />
     </Helmet>
   );
 };
