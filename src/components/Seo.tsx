@@ -1,45 +1,46 @@
 // src/components/Seo.tsx
-import { HelmetProvider } from "react-helmet-async";
+import { Helmet } from 'react-helmet-async';
 
 interface SeoProps {
-  title?: string;
-  description?: string;
-  canonicalUrl?: string;
+  title: string;
+  description: string;
+  url?: string;
   image?: string;
 }
 
 export const Seo = ({ 
-  title, 
-  description = "CreateHER Fest bridges the gender gap in emerging tech through hands-on training in AI, Blockchain, and AR/VR.",
-  canonicalUrl = "https://createherfest.com",
-  image = "/chf.svg"  // ensure this image exists in your public folder
+  title,
+  description,
+  url = 'https://createherfest-website-staging.web.app',
+  image = 'https://createherfest-website-staging.web.app/images/social-share.jpg' // Make sure this image exists
 }: SeoProps) => {
-  const finalTitle = title ? `${title} | CreateHER Fest` : 'CreateHER Fest';
+  const fullTitle = `${title} | CreateHER Fest`;
   
   return (
-    <HelmetProvider>
-      {/* Basic meta tags */}
-      <title>{finalTitle}</title>
+    <Helmet>
+      {/* Standard Meta Tags */}
+      <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={canonicalUrl} />
+      <link rel="canonical" href={url} />
 
-      {/* Open Graph */}
-      <meta property="og:site_name" content="CreateHER Fest" />
-      <meta property="og:title" content={finalTitle} />
+      {/* OpenGraph Meta Tags */}
+      <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
-      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="CreateHER Fest" />
 
-      {/* Twitter */}
+      {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={finalTitle} />
+      <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-
-      {/* Additional meta tags */}
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="theme-color" content="#150e60" />
-    </HelmetProvider>
+      
+      {/* LinkedIn Meta Tags */}
+      <meta property="linkedin:title" content={fullTitle} />
+      <meta property="linkedin:description" content={description} />
+      <meta property="linkedin:image" content={image} />
+    </Helmet>
   );
 };

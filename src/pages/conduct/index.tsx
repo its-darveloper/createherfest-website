@@ -3,8 +3,9 @@ import { Seo } from "@/components/Seo";
 const CodeOfConduct = () => {
   const guidelines = [
     {
-      title: "Our ultimate goal",
-      content: "CreateHER Fest is dedicated to empowering women and non-binary individuals in technology, fostering innovation, collaboration, and inclusion. We exist to create a safe enviornment, fostering inclusivity and access while encouraging collaboration and learning. We are committed to creating an excellent experience for everyone, regardless of gender identity and expression, sexual orientation, disabilities, neurodiversity, physical appearance, body size, ethnicity, nationality, race, age, religion, or other protected category. We expect all attendees, speakers, sponsors, and organizers to uphold the values of respect, diversity, and inclusion."
+      title: "Code of Conduct",
+      description: "CreateHER Fest is dedicated to empowering women and non-binary individuals in technology, fostering innovation, collaboration, and inclusion. We exist to create a safe enviornment, fostering inclusivity and access while encouraging collaboration and learning. We are committed to creating an excellent experience for everyone, regardless of gender identity and expression, sexual orientation, disabilities, neurodiversity, physical appearance, body size, ethnicity, nationality, race, age, religion, or other protected category. We expect all attendees, speakers, sponsors, and organizers to uphold the values of respect, diversity, and inclusion.",
+      url: "https://createherfest-website-staging.web.app/code-of-conduct"
     },
     {
       title: "Treat everyone with respect",
@@ -34,7 +35,12 @@ const CodeOfConduct = () => {
 
   return (
     <>
-    <Seo title="Code of Conduct" description="Our commitment to creating a safe, inclusive, and respectful environment for all participants at CreateHER Fest." />
+    <Seo 
+  title="Code of Conduct"
+  description="Our commitment to creating a safe, inclusive, and respectful environment for all participants at CreateHER Fest."
+  url="https://createherfest-website-staging.web.app/code-of-conduct"
+  image="https://createherfest-website-staging.web.app/images/code-of-conduct-social.jpg"
+/>
     <div className="min-h-screen bg-[#150e60] conduct">
       {/* Header - adjusted padding and spacing */}
       <div className="pt-24 pb-12 text-center">
