@@ -10,11 +10,11 @@ import FAQSection from './pages/faqs'
 import PrivacyPolicy from './pages/privacy'
 import CodeOfConduct from './pages/conduct'
 import TermsAndConditions from './pages/terms'
-import { HelmetProvider } from 'react-helmet-async'; 
+
 
 function App() {
   return (
-   <HelmetProvider>
+
     <div className="w-full min-h-screen">
       <Navigation />
       <main className="w-full">
@@ -31,7 +31,7 @@ function App() {
       </main>
       <Footer />
     </div>
-    </HelmetProvider>
+ 
   )
 }
 

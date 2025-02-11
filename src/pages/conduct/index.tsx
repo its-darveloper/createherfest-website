@@ -1,5 +1,3 @@
-import { Seo } from "@/components/Seo";
-
 const CodeOfConduct = () => {
   const guidelines = [
     {
@@ -34,16 +32,6 @@ const CodeOfConduct = () => {
   ];
 
   return (
-    <>
-    <Seo 
-  title="Code of Conduct"
-  description="Our commitment to creating a safe, inclusive, and respectful environment for all participants at CreateHER Fest."
-  url="https://createherfest-website-staging.web.app/code-of-conduct"
-  image="https://www.templeton-recruitment.com/hs-fs/hubfs/getty_466086694_89091.jpg?width=1920&name=getty_466086694_89091.jpg"
-  type="article"
-  author="CreateHER Fest"
-  publishedTime="2024-02-11T00:00:00.000Z"
-/>
     <div className="min-h-screen bg-[#150e60] conduct">
       {/* Header - adjusted padding and spacing */}
       <div className="pt-24 pb-12 text-center">
@@ -123,7 +111,6 @@ const CodeOfConduct = () => {
         </div>
       </div>
     </div>
-    </>
   );
 };
 
