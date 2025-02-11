@@ -4,8 +4,6 @@ import { format, parseISO, differenceInDays } from 'date-fns';
 import { 
   Search, 
   X, 
-  ChevronDown, 
-  ChevronUp,
   Clock,
   Timer,
   Calendar,

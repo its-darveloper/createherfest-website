@@ -1,7 +1,6 @@
 // src/pages/landing/index.tsx
 import AboutSection from "./components/AboutSection";
 import EventSeries from "./components/EventSeries";
-import FAQSection from "./components/FAQSection";
 import Hero from "./components/Hero";
 import PartnersMarquee from "./components/Partners";
 import WorkshopSpeakers from "./components/UpcomingWorkshops";

@@ -1,7 +1,7 @@
 // src/pages/landing/components/UpcomingWorkshops.tsx
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Calendar, Clock, Timer, ChevronDown } from 'lucide-react';
+import { Calendar, Clock, Timer, ChevronDown } from 'lucide-react';
 import { getRecentWorkshops, urlFor } from '@/lib/sanity';
 import { format, parseISO } from 'date-fns';
 import type { Workshop } from '@/types/sanity';
