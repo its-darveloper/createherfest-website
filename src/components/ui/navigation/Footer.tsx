@@ -14,23 +14,23 @@ const Footer = () => {
   ];
 
   const quickLinks = {
-    'CreateHER': [
-      { label: 'About Us', url: '/about' },
-      { label: 'Event Series', url: '/events' },
-      { label: 'Our Partners', url: '/partners' },
-      { label: 'Impact Report', url: '/impact' }
-    ],
+    // 'CreateHER': [
+    //   { label: 'About Us', url: '/about' },
+    //   { label: 'Event Series', url: '/events' },
+    //   { label: 'Our Partners', url: '/partners' },
+    //   { label: 'Impact Report', url: '/impact' }
+    // ],
     'Engage': [
-      { label: 'Register', url: '/register' },
-      { label: 'Volunteer', url: '/volunteer' },
-      { label: 'Contact Us', url: '/contact' },
-      { label: 'Apply to Teach', url: '/teach' }
+      { label: 'Register', url: 'https://form.jotform.com/243616450118149' },
+      { label: 'Volunteer', url: 'https://tally.so/r/wdjO1y' },
+      { label: 'Contact Us', url: 'https://tally.so/r/nrdyaN' },
+      { label: 'Apply to Teach', url: 'https://tally.so/r/wzJkBE' }
     ],
     'Resources': [
       { label: 'Code of Conduct', url: '/code-of-conduct' },
       { label: 'Privacy Policy', url: '/privacy' },
       { label: 'Terms of Use', url: '/terms' },
-      { label: 'FAQ Center', url: '/faq' }
+      { label: 'FAQ Center', url: '/faqs' }
     ]
   };
 
@@ -46,10 +46,10 @@ const Footer = () => {
                 CreateHER Fest
               </span>
             </div>
-            <p className="text-white/80 mb-8 text-lg leading-relaxed">
+            {/* <p className="text-white/80 mb-8 text-lg leading-relaxed">
               Bridging the gender gap in emerging technologies through innovation, learning, and empowerment.
-            </p>
-            <div className="flex space-x-3">
+            </p> */}
+            <div className="flex space-x-3 social-links">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={index}

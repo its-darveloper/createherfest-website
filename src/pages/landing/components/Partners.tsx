@@ -124,7 +124,7 @@ const PartnersSection = () => {
             Interested in shaping the future of tech?
           </p>
           <a 
-            href="/partner" 
+            href="https://tally.so/r/nrdyaN" 
             className="inline-flex items-center group text-white text-xl hover:text-[#CAA3D6] transition-all duration-300"
           >
             <span className="border-b-2 border-white/30 group-hover:border-[#CAA3D6] 

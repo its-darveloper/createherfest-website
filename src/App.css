@@ -411,3 +411,46 @@
 .about-card {
   gap: 1em;
 }
+
+.social-links {
+  padding-top: 1em;
+  gap: 0.5em;
+}
+
+.privacy-section {
+  padding-top: 6em;
+  
+}
+
+.privacy-title {
+  padding-bottom: 0.5em;
+}
+
+.privacy-description {
+  padding-bottom: 1em;
+}
+
+.privacy-content {
+  padding-bottom: 1em;
+}
+
+.privacy-contact {
+  margin-top:0.5em;
+  padding: 1em;
+  
+}
+
+.conduct {
+  padding-top: 6em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+}
+
+.conduct-title {
+  padding-bottom: 0.5em;
+}
+
+.guideline {
+  margin-bottom: 1em;
+}

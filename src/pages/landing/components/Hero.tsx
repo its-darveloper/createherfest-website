@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -101,7 +101,7 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button 
+            {/* <Button 
               variant="outline"
               className="group bg-white/5 backdrop-blur-md border-2 border-white/20 text-white 
                        hover:bg-white/10 hover:border-white/30
@@ -115,7 +115,7 @@ const Hero = () => {
                 Learn More
               </Link>
               <Star className="ml-2 h-5 w-5 opacity-0 transition-all group-hover:opacity-100 group-hover:rotate-12" />
-            </Button>
+            </Button> */}
           </motion.div>
         </div>
       </div>

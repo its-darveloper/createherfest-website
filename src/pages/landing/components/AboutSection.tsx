@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Target, Code, Network } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 interface FloatingElementProps {
   shape: string;
@@ -196,30 +197,17 @@ const AboutSection = () => {
           className="text-center relative z-10"
         >
           <Button 
-            size="lg" 
-            className="bg-[#473DC6] hover:bg-[#CAA3D6] text-white
-                       transition-colors duration-300 px-12 py-4 text-lg 
-                       rounded-full shadow-lg hover:shadow-xl button "
-          >
-            <Link to="">
-            Join CreateHER Fest
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="ml-3 -mr-2" 
-              width="24" 
-              height="24" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            >
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-            </Link>
-          </Button>
+  size="lg" 
+  className="bg-[#473DC6] hover:bg-[#CAA3D6] text-white
+             transition-colors duration-300 px-12 py-4 text-lg 
+             rounded-full shadow-lg hover:shadow-xl register-button"
+  asChild
+>
+  <Link to="https://form.jotform.com/243616450118149" className="flex items-center">
+    Join CreateHER Fest
+    <ArrowRight className="ml-3 w-6 h-6" />
+  </Link>
+</Button>
         </motion.div>
       </div>
     </section>
