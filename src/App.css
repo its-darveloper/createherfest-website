@@ -87,11 +87,13 @@
 }
 
 .faq-section {
-  padding: 2em;
+  padding-top: 8em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .faq-categories {
-  margin: 2em;
+  
   justify-content: center;
   gap: 1em;
 }
@@ -394,6 +396,7 @@
 .event-button {
   margin-bottom: 1em;
   padding: auto;
+  margin-left: 1em;
 }
 
 .partners-title {
@@ -403,4 +406,8 @@
   max-width: 100%;
   display: block;
 
+}
+
+.about-card {
+  gap: 1em;
 }

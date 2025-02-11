@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Target, Code, Network } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface FloatingElementProps {
   shape: string;
@@ -182,27 +183,7 @@ const AboutSection = () => {
               <p className="text-white/70 mb-6 text-base">
                 {feature.description}
               </p>
-              <a 
-                href="#" 
-                className="inline-flex items-center text-white hover:text-[#CAA3D6] group"
-              >
-                Learn More
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="ml-2 group-hover:translate-x-1 transition-transform" 
-                  width="24" 
-                  height="24" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
+              
             </motion.div>
           ))}
         </div>
@@ -218,8 +199,9 @@ const AboutSection = () => {
             size="lg" 
             className="bg-[#473DC6] hover:bg-[#CAA3D6] text-white
                        transition-colors duration-300 px-12 py-4 text-lg 
-                       rounded-full shadow-lg hover:shadow-xl button"
+                       rounded-full shadow-lg hover:shadow-xl button "
           >
+            <Link to="">
             Join CreateHER Fest
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
@@ -236,6 +218,7 @@ const AboutSection = () => {
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
+            </Link>
           </Button>
         </motion.div>
       </div>

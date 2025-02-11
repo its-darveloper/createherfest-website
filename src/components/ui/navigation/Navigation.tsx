@@ -1,17 +1,17 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { path: '/about', label: 'About' },
-  { path: '/workshops', label: 'Workshops' },
-  { path: '/faqs', label: 'FAQs' },
-  { path: '/speak', label: 'Speak' },
-  { path: '/mentor', label: 'Mentor' },
-  { path: '/volunteer', label: 'Volunteer' },
-  { path: '/partner', label: 'Partner' },
+  // { path: '/about', label: 'About' },
+  // { path: '/workshops', label: 'Workshops' },
+  { path: "/faqs", label: "FAQs" },
+  { path: "https://tally.so/r/wzJkBE", label: "Speak" },
+  { path: "https://tally.so/r/wQJJpp", label: "Mentor" },
+  { path: "https://tally.so/r/wdjO1y", label: "Volunteer" },
+  { path: "https://tally.so/r/nWMoXj", label: "Partner" },
 ];
 
 const menuVariants = {
@@ -22,8 +22,8 @@ const menuVariants = {
       duration: 0.2,
       when: "afterChildren",
       staggerChildren: 0.05,
-      staggerDirection: -1
-    }
+      staggerDirection: -1,
+    },
   },
   open: {
     opacity: 1,
@@ -32,14 +32,14 @@ const menuVariants = {
       duration: 0.3,
       when: "beforeChildren",
       staggerChildren: 0.08,
-      staggerDirection: 1
-    }
-  }
+      staggerDirection: 1,
+    },
+  },
 };
 
 const itemVariants = {
   closed: { opacity: 0, x: -4 },
-  open: { opacity: 1, x: 0 }
+  open: { opacity: 1, x: 0 },
 };
 
 export const Navigation = () => {
@@ -51,8 +51,8 @@ export const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -62,28 +62,28 @@ export const Navigation = () => {
         setIsMobileMenuOpen(false);
       }
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMobileMenuOpen]);
 
   return (
     <>
-      <header 
+      <header
         className={`desktop-nav fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
-          isScrolled || isMobileMenuOpen 
-            ? 'bg-[#150E60] shadow-lg' 
-            : 'bg-transparent'
+          isScrolled || isMobileMenuOpen
+            ? "bg-[#150E60] shadow-lg"
+            : "bg-transparent"
         }`}
       >
         <div className="w-full flex justify-center">
@@ -91,15 +91,23 @@ export const Navigation = () => {
             <nav className="flex items-center justify-between h-16">
               {/* Logo */}
               <Link to="/" className="flex items-center">
-                <span className="text-white font-bold text-xl">CreateHER Fest</span>
+                <img
+                  src="/chf.svg"
+                  alt="CreateHER Fest"
+                  className="h-12 w-auto"
+                />
               </Link>
-              
+
               {/* Desktop Navigation */}
-              <ul className={`${windowWidth >= 768 ? 'flex' : 'hidden'} md:flex items-center space-x-8 gap-8`}>
+              <ul
+                className={`${
+                  windowWidth >= 768 ? "flex" : "hidden"
+                } md:flex items-center space-x-8 gap-8`}
+              >
                 {navItems.map((item) => (
                   <li key={item.path}>
-                    <Link 
-                      to={item.path} 
+                    <Link
+                      to={item.path}
                       className="text-white/80 hover:text-white transition-colors duration-200"
                     >
                       {item.label}
@@ -109,11 +117,17 @@ export const Navigation = () => {
               </ul>
 
               {/* Desktop Register Button */}
-              <Button 
-                className={`register-button ${windowWidth >= 768 ? 'flex' : 'hidden'} 
+              <Button
+                className={`register-button ${
+                  windowWidth >= 768 ? "flex" : "hidden"
+                } 
                   md:flex bg-[#473dc6] hover:bg-[#CAA3D6]/80 text-white transition-all duration-300`}
               >
-                <Link to="https://form.jotform.com/243616450118149" target="_blank" className="flex items-center justify-center">
+                <Link
+                  to="https://form.jotform.com/243616450118149"
+                  target="_blank"
+                  className="flex items-center justify-center"
+                >
                   Register
                 </Link>
               </Button>
@@ -125,7 +139,11 @@ export const Navigation = () => {
                 aria-label="Toggle menu"
               >
                 <AnimatePresence mode="wait">
-                  {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                  {isMobileMenuOpen ? (
+                    <X className="w-6 h-6" />
+                  ) : (
+                    <Menu className="w-6 h-6" />
+                  )}
                 </AnimatePresence>
               </button>
             </nav>
@@ -143,14 +161,9 @@ export const Navigation = () => {
             exit="closed"
             className="fixed top-16 left-0 right-0 bg-[#150E60] md:hidden z-40"
           >
-            <motion.div 
-              className="flex flex-col px-4 py-2 bg-[#150E60] max-h-[70vh] overflow-y-auto mobile-nav"
-            >
+            <motion.div className="flex flex-col px-4 py-2 bg-[#150E60] max-h-[70vh] overflow-y-auto mobile-nav">
               {navItems.map((item) => (
-                <motion.div
-                  key={item.path}
-                  variants={itemVariants}
-                >
+                <motion.div key={item.path} variants={itemVariants}>
                   <Link
                     to={item.path}
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -162,17 +175,18 @@ export const Navigation = () => {
                   </Link>
                 </motion.div>
               ))}
-              
-              <motion.div 
-                variants={itemVariants}
-                className="py-4"
-              >
-                <Button 
+
+              <motion.div variants={itemVariants} className="py-4">
+                <Button
                   className="register-button bg-[#473dc6] hover:bg-[#CAA3D6]/80 text-white py-4
                            transition-all duration-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <Link to="https://form.jotform.com/243616450118149" target="_blank" className="w-full">
+                  <Link
+                    to="https://form.jotform.com/243616450118149"
+                    target="_blank"
+                    className="w-full"
+                  >
                     Register Now
                   </Link>
                 </Button>

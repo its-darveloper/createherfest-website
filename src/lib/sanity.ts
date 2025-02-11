@@ -57,6 +57,7 @@ export async function getRecentWorkshops(): Promise<Workshop[]> {
       date,
       duration,
       track,
+      workshopUrl,
       "speaker": speaker->{
         _id,
         name,
@@ -91,6 +92,7 @@ export async function getWorkshops(): Promise<Workshop[]> {
       date,
       duration,
       track,
+      workshopUrl,
       "speaker": speaker->{
         _id,
         name,

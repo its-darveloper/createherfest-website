@@ -6,6 +6,7 @@ import Footer from './components/ui/navigation/Footer'
 import AboutPage from './pages/about'
 import SpeakersPage from './pages/speakers'
 import WorkshopSchedulePage from './pages/schedule'
+import FAQSection from './pages/faqs'
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/faqs" element={<div>FAQs Page</div>} />
+          <Route path="/faqs" element={<FAQSection />} />
           <Route path="/speakers" element={<SpeakersPage />} />
           <Route path="/schedule" element={<WorkshopSchedulePage />} />
         </Routes>

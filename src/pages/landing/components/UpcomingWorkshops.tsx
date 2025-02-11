@@ -1,13 +1,13 @@
 // src/pages/landing/components/UpcomingWorkshops.tsx
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, Clock, Timer, ChevronDown } from 'lucide-react';
-import { getRecentWorkshops, urlFor } from '@/lib/sanity';
-import { format, parseISO } from 'date-fns';
-import type { Workshop } from '@/types/sanity';
-import { PortableText } from '@portabletext/react';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Calendar, Clock, Timer, ChevronDown } from "lucide-react";
+import { getRecentWorkshops, urlFor } from "@/lib/sanity";
+import { format, parseISO } from "date-fns";
+import type { Workshop } from "@/types/sanity";
+import { PortableText } from "@portabletext/react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface StatusBadgeProps {
   date: string;
@@ -16,19 +16,23 @@ interface StatusBadgeProps {
 
 const StatusBadge: React.FC<StatusBadgeProps> = ({ date, duration }) => {
   const isFuture = new Date(date) > new Date();
-  
+
   return (
-    <div className={`px-4 py-2 rounded-full text-sm ${
-      isFuture ? 'bg-[#473DC6]/20 text-[#CAA3D6]' : 'bg-white/10 text-white/70'
-    }`}>
+    <div
+      className={`px-4 py-2 rounded-full text-sm ${
+        isFuture
+          ? "bg-[#473DC6]/20 text-[#CAA3D6]"
+          : "bg-white/10 text-white/70"
+      }`}
+    >
       <div className="flex flex-wrap justify-center items-center gap-4 py-2 section-tag">
         <span className="flex items-center gap-2">
           <Calendar className="w-4 h-4 mr-2" />
-          {format(parseISO(date), 'MMMM d, yyyy')}
+          {format(parseISO(date), "MMMM d, yyyy")}
         </span>
         <span className="flex items-center gap-2">
           <Clock className="w-4 h-4 mr-2" />
-          {format(parseISO(date), 'h:mm a')} ET {/* Added ET timezone */}
+          {format(parseISO(date), "h:mm a")} ET {/* Added ET timezone */}
         </span>
         <span className="flex items-center gap-2">
           <Timer className="w-4 h-4 mr-2" />
@@ -68,7 +72,7 @@ const SpeakerBio: React.FC<{ bio: any; name: string }> = ({ bio, name }) => {
             className="overflow-hidden"
           >
             <div className="text-white/70 text-sm pt-2 lg:pt-0">
-              {typeof bio === 'string' ? (
+              {typeof bio === "string" ? (
                 <p>{bio}</p>
               ) : (
                 bio && <PortableText value={bio} />
@@ -92,7 +96,7 @@ const WorkshopSpeakers: React.FC = () => {
         const data = await getRecentWorkshops();
         setWorkshops(data);
       } catch (error) {
-        console.error('Error fetching workshops:', error);
+        console.error("Error fetching workshops:", error);
       } finally {
         setIsLoading(false);
       }
@@ -133,7 +137,8 @@ const WorkshopSpeakers: React.FC = () => {
             Agenda & Speakers
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto section-description">
-            Dive into transformative workshops led by industry pioneers who are reshaping technology and empowering women in tech.
+            Dive into transformative workshops led by industry pioneers who are
+            reshaping technology and empowering women in tech.
           </p>
         </div>
 
@@ -142,24 +147,26 @@ const WorkshopSpeakers: React.FC = () => {
           {/* Timeline Navigation */}
           <div className="mb-12 overflow-x-auto">
             <div className="flex space-x-4 min-w-max px-4">
-            {workshops.map((workshop, index) => (
-  <button
-    key={workshop._id}
-    onClick={() => setActiveIndex(index)}
-    className={`date-info flex flex-col items-center p-4 rounded-xl transition-all
-      ${activeIndex === index 
-        ? 'bg-[#473DC6]/30 border-[#CAA3D6]' 
-        : 'bg-white/5 hover:bg-white/10 border-transparent'
+              {workshops.map((workshop, index) => (
+                <button
+                  key={workshop._id}
+                  onClick={() => setActiveIndex(index)}
+                  className={`date-info flex flex-col items-center p-4 rounded-xl transition-all
+      ${
+        activeIndex === index
+          ? "bg-[#473DC6]/30 border-[#CAA3D6]"
+          : "bg-white/5 hover:bg-white/10 border-transparent"
       } border`}
-  >
-    <span className="text-[#CAA3D6] text-sm">
-      {format(parseISO(workshop.date), 'MMM d')}
-    </span>
-    <span className="text-white text-xs mt-1">
-      {format(parseISO(workshop.date), 'h:mm a')} ET {/* Added ET timezone */}
-    </span>
-  </button>
-))}
+                >
+                  <span className="text-[#CAA3D6] text-sm">
+                    {format(parseISO(workshop.date), "MMM d")}
+                  </span>
+                  <span className="text-white text-xs mt-1">
+                    {format(parseISO(workshop.date), "h:mm a")} ET{" "}
+                    {/* Added ET timezone */}
+                  </span>
+                </button>
+              ))}
             </div>
           </div>
 
@@ -176,8 +183,11 @@ const WorkshopSpeakers: React.FC = () => {
               >
                 {activeWorkshop.speaker?.image && (
                   <div className="relative w-24 h-24 lg:w-32 lg:h-32 mx-auto mb-6">
-                    <img 
-                      src={urlFor(activeWorkshop.speaker.image).width(400).height(400).url()} 
+                    <img
+                      src={urlFor(activeWorkshop.speaker.image)
+                        .width(400)
+                        .height(400)
+                        .url()}
                       alt={activeWorkshop.speaker.name}
                       className="rounded-full w-full h-full object-cover ring-2 ring-white/10"
                     />
@@ -187,12 +197,13 @@ const WorkshopSpeakers: React.FC = () => {
                   {activeWorkshop.speaker?.name}
                 </h3>
                 <p className="text-[#CAA3D6] text-center mb-4">
-                  {activeWorkshop.speaker?.title} 
-                  {activeWorkshop.speaker?.company && ` @ ${activeWorkshop.speaker.company}`}
+                  {activeWorkshop.speaker?.title}
+                  {activeWorkshop.speaker?.company &&
+                    ` @ ${activeWorkshop.speaker.company}`}
                 </p>
-                <SpeakerBio 
-                  bio={activeWorkshop.speaker?.bio} 
-                  name={activeWorkshop.speaker?.name || 'Speaker'}
+                <SpeakerBio
+                  bio={activeWorkshop.speaker?.bio}
+                  name={activeWorkshop.speaker?.name || "Speaker"}
                 />
               </motion.div>
             </div>
@@ -208,34 +219,43 @@ const WorkshopSpeakers: React.FC = () => {
               >
                 {activeWorkshop.date && (
                   <div className="mb-6 upcoming-workshop-status">
-                    <StatusBadge 
-                      date={activeWorkshop.date} 
-                      duration={activeWorkshop.duration} 
+                    <StatusBadge
+                      date={activeWorkshop.date}
+                      duration={activeWorkshop.duration}
                     />
                   </div>
                 )}
-                
+
                 <h2 className="text-3xl font-bold text-white mb-4 upcoming-workshop-title">
                   {activeWorkshop.title}
                 </h2>
-                
+
                 <p className="text-white/80 mb-8 upcoming-workshop-description">
                   {activeWorkshop.description}
                 </p>
 
                 <div className="">
                   {isFutureWorkshop(activeWorkshop.date) ? (
-                    
-                    <Button 
-                      className="flex-1 bg-[#473dc6] hover:bg-[#CAA3D6]/80 text-white
-                               transition-all duration-300 register-button"
+                    <Button
+                      className="flex-1 bg-[#473dc6] hover:bg-[#473dc6]/90 text-white
+               transition-all duration-300 register-button"
+                      asChild // Add this to properly handle the Link component
+                      disabled={!activeWorkshop.workshopUrl} // Disable if no URL
                     >
-                      <Link to={activeWorkshop.workshopUrl} target='_blank'>Register Now</Link>
-                      
+                      {activeWorkshop.workshopUrl ? (
+                        <Link
+                          to={activeWorkshop.workshopUrl}
+                          target="_blank"
+                          rel="noopener noreferrer" // Add security best practice
+                        >
+                          Register Now
+                        </Link>
+                      ) : (
+                        <span>Registration Coming Soon</span>
+                      )}
                     </Button>
-                    
                   ) : (
-                    <Button 
+                    <Button
                       className="flex-1 bg-white/10 hover:bg-white/20 text-white
                                transition-all duration-300"
                     >

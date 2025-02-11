@@ -282,28 +282,18 @@ const EventSeries = () => {
             </p>
 
             <Button 
-              className="group relative inline-flex items-center justify-center p-[1px] overflow-hidden
-                       rounded-lg hover:cursor-pointer register-button event-button
-                       transition-all duration-300"
-            >
-              {/* Gradient border background */}
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-gradient-to-r from-[#37D5D6] via-[#4E6BFF] to-[#CAA3D6]" />
-              
-              {/* Inner background with gradient shine effect */}
-              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center
-                            rounded-lg bg-[#150E60] px-8 py-3 backdrop-blur-3xl
-                            transition-all duration-500 hover:bg-[#1a1170]
-                            relative group-hover:bg-opacity-90">
-                <Link to="https://form.jotform.com/243616450118149" target='_blank' 
-                      className="relative flex items-center gap-2 font-medium text-white">
-                  Register
-                </Link>
-              </span>
-              
-              {/* Shine effect overlay */}
-              <span className="absolute inset-0 rounded-lg bg-gradient-to-tr from-[#37D5D6]/20 via-transparent to-transparent
-                            opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-            </Button>
+  className="bg-[#473dc6] hover:bg-[#473dc6]/90 text-white px-8 py-3 
+             transition-all duration-300 register-button event-button"
+  asChild
+>
+  <Link 
+    to="https://form.jotform.com/243616450118149" 
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Register
+  </Link>
+</Button>
 
             {/* Progress Indicator */}
             <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden mt-8">
