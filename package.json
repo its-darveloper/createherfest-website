@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:staging": "vite build --mode staging",
+    "build:prod": "vite build --mode production",
+    "deploy:staging": "npm run build:staging && firebase deploy -P staging",
+    "deploy:prod": "npm run build:prod && firebase deploy -P production"
   },
   "dependencies": {
     "@portabletext/react": "^3.2.1",
