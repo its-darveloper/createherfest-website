@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "createher-fest-website"
+    "default": "createherfest-website-staging",
+    "staging": "createherfest-website-staging",
+    "production": "createher-fest-website"
+
   }
 }
