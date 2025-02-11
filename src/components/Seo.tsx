@@ -12,35 +12,39 @@ export const Seo = ({
   title,
   description,
   url = 'https://createherfest-website-staging.web.app',
-  image = 'https://createherfest-website-staging.web.app/images/social-share.jpg' // Make sure this image exists
+  image = 'https://createherfest-website-staging.web.app/social-card.png' // Make sure this exists
 }: SeoProps) => {
   const fullTitle = `${title} | CreateHER Fest`;
   
   return (
     <Helmet>
-      {/* Standard Meta Tags */}
+      {/* Standard Tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={url} />
 
-      {/* OpenGraph Meta Tags */}
-      <meta property="og:title" content={fullTitle} />
+      {/* Essential OpenGraph Tags for LinkedIn */}
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
-      <meta property="og:url" content={url} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:title" content={fullTitle} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="CreateHER Fest" />
+      <meta property="og:url" content={url} />
 
-      {/* Twitter Meta Tags */}
+      {/* Additional OpenGraph Tags */}
+      <meta property="og:site_name" content="CreateHER Fest" />
+      <meta property="og:locale" content="en_US" />
+
+      {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@createherfest" />
+      <meta name="twitter:creator" content="@createherfest" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-      
-      {/* LinkedIn Meta Tags */}
-      <meta property="linkedin:title" content={fullTitle} />
-      <meta property="linkedin:description" content={description} />
-      <meta property="linkedin:image" content={image} />
+
+      {/* Canonical URL */}
+      <link rel="canonical" href={url} />
     </Helmet>
   );
 };
