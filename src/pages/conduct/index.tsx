@@ -39,7 +39,10 @@ const CodeOfConduct = () => {
   title="Code of Conduct"
   description="Our commitment to creating a safe, inclusive, and respectful environment for all participants at CreateHER Fest."
   url="https://createherfest-website-staging.web.app/code-of-conduct"
-  image="https://createherfest-website-staging.web.app/images/code-of-conduct-social.jpg"
+  image="https://createherfest-website-staging.web.app/og-image.jpg"
+  type="article"
+  author="CreateHER Fest"
+  publishedTime="2024-02-11T00:00:00.000Z"
 />
     <div className="min-h-screen bg-[#150e60] conduct">
       {/* Header - adjusted padding and spacing */}
